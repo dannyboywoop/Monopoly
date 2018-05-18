@@ -10,7 +10,7 @@ using namespace mnply;
 using namespace inputmethods;
 
 //game constructor
-game::game(const vector<string>& playerNames) :diceSet(), board(playerNames.size()),startingMoney(1500),numOfPlayers(playerNames.size()),currentPlayer(0),gameOver(false){
+game::game(const vector<string>& playerNames) :diceSet(), board(static_cast<int>(playerNames.size())),startingMoney(1500),numOfPlayers(static_cast<int>(playerNames.size())),currentPlayer(0),gameOver(false){
 	if (playerNames.size() == 0) throw invalid_argument("Cannot construct game object using empty vector of playerNames");//throw an exception if inTheRunning is an empty set
 	try{//catches exceptions thrown in the initialize function and avoids running the game after bad initialization
 		initialize(playerNames);//initialize the game
@@ -294,9 +294,9 @@ void game::takeJailTurn(){
 //returns the number of players in the game that are currently bankrupt
 int game::countBankruptedPlayers()const{
 	//iterate over the players vector and count players that are bankrupt, storing the result in 'bankrupted'
-	int bankrupted = count_if(players.begin(), players.end(), [&bankrupted](const shared_ptr<player>& plyr){
+	int bankrupted = static_cast<int>(count_if(players.begin(), players.end(), [&bankrupted](const shared_ptr<player>& plyr){
 		return plyr->isBankrupt();
-	});
+	}));
 	return bankrupted;
 }
 

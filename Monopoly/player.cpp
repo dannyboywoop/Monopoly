@@ -47,7 +47,7 @@ int player::ownedInGroup(groupEnum group)const{
 		return(prop->getGroup() == group);
 	};
 	//counts the number of realEstate spaces in the players realEstateOwned list that meet the condition of inGroup
-	int numOwned{ count_if(realEstateOwned.begin(), realEstateOwned.end(), inGroup) };
+	int numOwned{ static_cast<int>(count_if(realEstateOwned.begin(), realEstateOwned.end(), inGroup)) };
 	return numOwned;
 }
 
@@ -262,9 +262,9 @@ player::tradeOffer player::chooseTradeOffer()const{
 		if (selectedRealEstate == nullptr) return;//exit addProp() if no realEstate selected
 
 		//count the number of realEstate owned of the same group which have houses built on them
-		int realEstateWithHouses = count_if(realEstateOwned.begin(), realEstateOwned.end(), [selectedRealEstate](const shared_ptr<realEstate>& prop){
+		int realEstateWithHouses = static_cast<int>(count_if(realEstateOwned.begin(), realEstateOwned.end(), [selectedRealEstate](const shared_ptr<realEstate>& prop){
 			return (prop->getGroup() == selectedRealEstate->getGroup() && prop->hasHouses());
-		});
+		}));
 		//if any realEstate of the same group has houses built on it, this realEstate cannot be traded and isnt added to currentOffer
 		if (realEstateWithHouses > 0){
 			cout << "Error: Real estate in this group cannot be sold while houses remain on them!" << endl;
@@ -337,7 +337,7 @@ void player::trade(const vector<shared_ptr<player>>& players){
 	}
 	try{
 		//allow player to select tradePartner from list by their index
-		int tradePartner = takeInRange<int>("Please enter the number of the player you would like to trade with: ", 0, players.size())-1;
+		int tradePartner = takeInRange<int>("Please enter the number of the player you would like to trade with: ", 0, static_cast<int>(players.size()))-1;
 		
 		if (tradePartner == -1)return;//if the user selected "go back", exit trade()
 		if (players[tradePartner]->getName() == name){//if the player selects themself, display a message and exit trade()

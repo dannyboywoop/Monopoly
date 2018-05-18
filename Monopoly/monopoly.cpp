@@ -46,7 +46,7 @@ vector<string> requestPlayerNames(int numOfPlayers){
 		int playersWithSameName{ -1 };//stores the number of elements in the names vector equal to the inputted name
 		while (playersWithSameName != 0){//repeats until the inputted name is not already in the vector of names
 			name = takeInput<string>(inputRequest.str());//takes string input for name from user
-			playersWithSameName = count(names.begin(), names.end(), name);
+			playersWithSameName = static_cast<int>(count(names.begin(), names.end(), name));
 			if (playersWithSameName > 0) cout << "Error: Each player must have a unique name!" << endl;
 		}
 		names.push_back(name);//if name is unique, add to names vector
