@@ -6,7 +6,7 @@ using namespace std;
 using namespace mnply;
 
 //dice constructor and destructor
-dice::dice(){}
+dice::dice()noexcept :doublesRolled(0){}
 dice::~dice(){}
 
 //accessor method for doublesRolled

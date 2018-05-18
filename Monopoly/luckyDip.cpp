@@ -53,7 +53,7 @@ void luckyDip::issueCard(vector<card>& deck, const shared_ptr<player>& plyr, gam
 
 // --------------------------------------------------------------------chance function definitions----------------------------------------------------------------------
 //constructor (invokes base class constructor) and destructor for chance
-chance::chance() :luckyDip("Chance"){}
+chance::chance()noexcept :luckyDip("Chance"){}
 chance::~chance(){}
 
 //initialise static member data 'deck' using static method makeDeck()
@@ -93,7 +93,7 @@ void chance::land(const shared_ptr<player>& plyr, gameBoard& board){
 
 // --------------------------------------------------------------------communityChest function definitions----------------------------------------------------------------------
 //constructor (invokes base class constructor) and destructor for communityChest
-communityChest::communityChest() :luckyDip("Community Chest"){}
+communityChest::communityChest()noexcept :luckyDip("Community Chest"){}
 communityChest::~communityChest(){}
 
 //initialise static member data 'deck' using static method makeDeck()

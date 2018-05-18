@@ -11,7 +11,7 @@ using namespace mnply;
 using namespace inputmethods;
 
 //property's constructor (invokes base class constructor) and destructor
-property::property(groupEnum set, string name, int purchasePrice, vector<int> rent) : realEstate(set, name, purchasePrice), rentValues(rent), housePrice(50 * (1 + set / 2)){}
+property::property(groupEnum set, string name, int purchasePrice, vector<int> rent) : realEstate(set, name, purchasePrice), rentValues(rent), houses(0), housePrice(50 * (1 + set / 2)){}
 property::~property(){}
 
 //accessor for houses

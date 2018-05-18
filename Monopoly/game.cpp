@@ -10,7 +10,7 @@ using namespace mnply;
 using namespace inputmethods;
 
 //game constructor
-game::game(const vector<string>& playerNames) :diceSet(), board(playerNames.size()),startingMoney(1500),numOfPlayers(playerNames.size()),currentPlayer(0){
+game::game(const vector<string>& playerNames) :diceSet(), board(playerNames.size()),startingMoney(1500),numOfPlayers(playerNames.size()),currentPlayer(0),gameOver(false){
 	if (playerNames.size() == 0) throw invalid_argument("Cannot construct game object using empty vector of playerNames");//throw an exception if inTheRunning is an empty set
 	try{//catches exceptions thrown in the initialize function and avoids running the game after bad initialization
 		initialize(playerNames);//initialize the game

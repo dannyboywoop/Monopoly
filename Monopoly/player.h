@@ -31,6 +31,7 @@ namespace mnply{
 			int outOfJailFreeCards;
 			std::list<std::shared_ptr<realEstate>> realEstateOffered;
 			void printOffer()const;//prints out member data of tradeOffer
+			tradeOffer()noexcept;
 		};
 
 		//private methods prototypes

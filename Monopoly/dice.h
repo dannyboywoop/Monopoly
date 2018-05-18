@@ -11,7 +11,7 @@ namespace mnply{
 		int rollDie();//private method to generate a random integer uniformly distributed between 1 and 6
 	public:
 		//constructor and destructor prototypes
-		dice();
+		dice()noexcept;
 		~dice();
 
 		//method prototypes

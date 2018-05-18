@@ -11,7 +11,7 @@ using namespace mnply;
 
 //--------------------------------------------------------------------- GO member function definitions ----------------------------------------------------------------------
 //GO's constructor (invokes base class constructor) and destructor
-GO::GO():gameSpace("GO"){}
+GO::GO()noexcept :gameSpace("GO"){}
 GO::~GO(){}
 
 //initialise static const goReward to £200
@@ -35,7 +35,7 @@ void GO::land(const shared_ptr<player>& plyr, gameBoard& board){
 
 //--------------------------------------------------------------------- jail member function definitions ----------------------------------------------------------------------
 //jail's constructor (invokes base class constructor) and destructor
-jail::jail():gameSpace("Jail"){} 
+jail::jail()noexcept :gameSpace("Jail"){}
 jail::~jail(){}
 
 //override of gameSpace's land method for jail
@@ -46,7 +46,7 @@ void jail::land(const shared_ptr<player>& plyr, gameBoard& board){
 
 //--------------------------------------------------------------------- goToJail member function definitions ----------------------------------------------------------------------
 //goToJail's constructor (invokes base class constructor) and destructor
-goToJail::goToJail() : gameSpace("Go to Jail"){}
+goToJail::goToJail()noexcept : gameSpace("Go to Jail"){}
 goToJail::~goToJail(){}
 
 //override of gameSpace's land method for goToJail, sends the player directly to jail
@@ -64,7 +64,7 @@ void goToJail::land(const shared_ptr<player>& plyr, gameBoard& board){
 
 //--------------------------------------------------------------------- freeParking member function definitions ----------------------------------------------------------------------
 //freeParking's constructor (invokes base class constructor) and destructor
-freeParking::freeParking() : gameSpace("Free Parking"){}
+freeParking::freeParking()noexcept : gameSpace("Free Parking"){}
 freeParking::~freeParking(){}
 
 //override of gameSpace's land method for freeParking, no action is taken

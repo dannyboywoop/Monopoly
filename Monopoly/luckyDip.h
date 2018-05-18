@@ -37,7 +37,7 @@ namespace mnply{
 	class chance : public luckyDip{
 		friend class gameBoard;//declares gameBoard as friend class to allow it to use chance's private constructor
 	private:
-		chance();//private constructor prototype
+		chance()noexcept;//private constructor prototype
 		static std::vector<card> deck; //static member data stores the deck of chance cards shared by all chance spaces
 
 		static std::vector<card> makeDeck();//prototype of static member function to initialise deck
@@ -50,7 +50,7 @@ namespace mnply{
 	class communityChest : public luckyDip{
 		friend class gameBoard;//declares gameBoard as friend class to allow it to use communityChest's private constructor
 	private:
-		communityChest();//private constructor prototype
+		communityChest()noexcept;//private constructor prototype
 		static std::vector<card> deck; //static member data stores the deck of communityChest cards shared by all communityChest spaces
 
 		static std::vector<card> makeDeck();//prototype of static member function to initialise deck

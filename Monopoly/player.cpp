@@ -16,6 +16,9 @@ player::player(string playerName, int startingMoney) :name(playerName), money(st
 //player desctructor
 player::~player(){}
 
+//tradeOffer constructor
+player::tradeOffer::tradeOffer()noexcept :amountOfMoney(0),outOfJailFreeCards(0){}
+
 //----------------------------------player accessor functions--------------------------------------------------------------------------------------------------------------------
 
 string player::getName()const{
