@@ -143,6 +143,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="dice.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="gameBoard.h" />
+    <ClInclude Include="gameSpace.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="luckyDip.h" />
+    <ClInclude Include="miscSpaces.h" />
+    <ClInclude Include="monopoly.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="property.h" />
+    <ClInclude Include="railway.h" />
+    <ClInclude Include="realEstate.h" />
+    <ClInclude Include="utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dice.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameBoard.cpp" />
+    <ClCompile Include="gameSpace.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="luckyDip.cpp" />
+    <ClCompile Include="miscSpaces.cpp" />
+    <ClCompile Include="monopoly.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="property.cpp" />
+    <ClCompile Include="railway.cpp" />
+    <ClCompile Include="realEstate.cpp" />
+    <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
