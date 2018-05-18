@@ -10,6 +10,7 @@ namespace mnply{
 
 	//forward declaration of player class to allow gameSpace::land() and gameSpace::printLandMessage() to take pointers to players as parameters
 	class player;
+	class gameBoard;
 	
 	//definition abstract base class: gameSpace
 	class gameSpace{
